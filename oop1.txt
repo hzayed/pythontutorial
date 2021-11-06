@@ -1,0 +1,192 @@
+#********* create function to make a calculator*************
+def calc(a,b,op):
+  if op=='+':
+     print('a+b =',a+b)
+  elif op=='-':
+     print('a-b =',a-b)
+  elif op=='*':
+     print('a*b =',a*b)
+  elif op=='/':
+     print('a/b =',a/b)
+  elif op=='//':
+     print('a//b =',a//b)
+  elif op=='%':
+     print('a mod b =',a%b)
+  else :
+     print('The operation is not exist')
+## call this function :
+calc(2,5,'+')
+calc(5,3,'/')
+calc(6,4,'%')
+calc(2,3,'//')
+calc(5,4,'*')
+calc(1,4,'-')
+calc(1,4,'=')
+## the output of this function:
+result:
+a+b = 7
+a/b = 1.6666666666666667
+a mod b = 2
+a//b = 0
+a*b = 20
+a-b = -3
+The operation is not exist 
+#**************************************************
+
+#******* a nother way to make a calculator*************
+def calc1(num1,num2):
+  sum=num1+num2
+  sub=num1-num2
+  mul=num1*num2
+  div=num1/num2
+  return sum,sub,mul,div
+
+#call this function :
+sum,sub,mul,div=calc1(5,3)
+print(sum)
+print(sub)
+print(mul)
+print(div)
+num1=int(input('ENTER N1'))
+num2=int(input('ENTER N2'))
+sum,sub,mul,div=calc1(num1,num2)
+
+print(sum)
+print(sub)
+print(mul)
+print(div)
+
+# the output of this function 
+result:
+8
+2
+15
+1.6666666666666667
+ENTER N13
+ENTER N25
+8
+-2
+15
+0.6
+#****************************************************
+
+#*******this block will calculate the current age *********
+birth_date = datetime.date(1998, 4, 25)
+now=date.today()
+print(now.year)
+now_date = datetime.date(now.year,now.month,now.day)
+time_difference = now_date - birth_date
+# Subtract end_date from birth_date
+age = time_difference.days
+# Get age in days
+print(age/365)
+#*************************************
+#****print the charcter in "students" string which has an even index***********
+str1 = "STUDENTS"
+for i in range(len(str1)):
+  if i%2==0:
+    print(str1[i])
+# the output:
+S
+U
+E
+T
+#************************************************
+
+#******** remove a specific character in specific string************
+def remove_char(str1,n):
+   for i in range(n):
+     str1=str1[n:]
+    #  remove(str1,len(str1)-i)
+     print(str1)
+remove_char('sahar',1)
+res:ahar
+#*******************************************
+
+#****** check if the first item in the first list has the same value of the last item in the second list******
+numbers_x = [10, 20, 30, 40, 10]
+numbers_y = [75, 65, 35, 75, 30]
+def check(str_list):
+     if str_list[0]==str_list[len(str_list)-1]:
+        return True
+     else:
+      return False
+print(check(numbers_x))
+#***********************************************************
+
+#************ print all numbers that are multiplies of five******
+numbers_z = [7, 15, 35, 51, 31]
+for i in range(len(numbers_z)):
+  if numbers_z[i]%5==0:
+    print(numbers_z[i],end=' ')
+#*******************************
+
+#calculater the number of characters in "Ema "string
+str_x = "Emma is good developer. Emma is a writer"
+print(str_x.count('Emma'))
+#***********************
+
+#**** print counter************
+for i in range(1,6):
+  print('\n')
+  for ii in range(1,6):
+     print(i,end=' ')
+     if i==ii:
+       break
+#**************************************
+
+#***** print a palindrome numbers**********
+n=int(input("Enter number:"))
+temp=n
+rev=0
+while(n>0):
+    dig=n%10
+    n=n//10
+    rev=rev*10+dig 
+if(temp==rev):
+    print("The number is a palindrome!")
+else:
+    print("The number isn't a palindrome!")
+#*********************************
+
+#**** put the even numbers in list 1 and list 2 into list 3*************
+list1 = [10, 20, 25, 30, 35]
+list2 = [40, 45, 60, 75, 90]
+list3=[]
+for i in range(len(list1)):
+  if list1[i]%2!=0:
+    list3.append(list1[i])
+for i in range(len(list2)):
+  if list2[i]%2==0:
+    list3.append(list2[i])
+print(list3)
+#*****************************************
+
+
+#**********object orianted*************
+class shapes:
+
+  def __init__(self,name,color,area):
+    self.name=name
+    self.color=color
+    self.area=area
+  def data (self):
+    print('The name is :',self.name,' The color of the shape is',self.color,end=' ')
+  def update_color(self,color_new):
+    self.color=color_new
+  def calc_area_circle(self,r):
+    self.area= 3.14*(r**2)
+  def calc_area_rect(self,h,w):
+    self.area= h*w
+circle=shapes('Circle','Red',22.6)
+triangle=shapes('Triangle','yellow',12.5)
+rect=shapes('Rectangle','green',66)
+print(circle.color)
+print(triangle.data())
+circle.update_color('Green')
+print(circle.color)
+circle.calc_area_circle(5)
+print(circle.area)
+rect.calc_area_rect(7,4)
+print(rect.area)
+
